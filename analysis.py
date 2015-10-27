@@ -764,8 +764,6 @@ if __name__ == '__main__':
     to_remove  = [PCPI_FIP+'_'+PCPI_data.label for PCPI_FIP in PCPI_data.loaded if PCPI_FIP not in POP_data.loaded]
     PCPI_data.drop(to_remove, axis=1, inplace=True)
 
-
-
     # Adjust PCPI data to 2015 dollars, and convert to thousands of
     # dollars
     PCPI_data  = deflate(PCPI_data, 'C/P/I/CPIAUCSL.csv', base='2015')

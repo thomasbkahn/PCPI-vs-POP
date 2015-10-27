@@ -760,10 +760,6 @@ if __name__ == '__main__':
     POP_files  = get_POP_files(FRED_files, PCPI_data.loaded, counties)
     POP_data   = aggregate(POP_files, 'POP')
 
-    PCPI_data.label = 'PCPI'
-    PCPI_data.loaded = [col[:5] for col in PCPI_data.columns.tolist()]
-    POP_data.loaded = [col[:5] for col in POP_data.columns.tolist()]
-
     # Remove data from PCPI for counties that did not have POP data
     to_remove  = [PCPI_FIP+'_'+PCPI_data.label for PCPI_FIP in PCPI_data.loaded if PCPI_FIP not in POP_data.loaded]
     PCPI_data.drop(to_remove, axis=1, inplace=True)

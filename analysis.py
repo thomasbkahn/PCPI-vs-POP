@@ -220,7 +220,7 @@ def aggregate(files, label, save='pickle', verbose=True, sort=True):
         agg.sort_index(axis=1, inplace=True)
     
     if save == 'pickle':
-        agg.to_pickle(label+'_pickle')
+        agg.to_pickle(label+'_agg.p')
     elif save == 'csv':
         agg.to_csv(label+'_agg.csv')
 

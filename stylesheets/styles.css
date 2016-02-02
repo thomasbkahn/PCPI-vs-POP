@@ -71,8 +71,18 @@ p, ul, ol, table, pre, dl {
   margin:0 0 20px;
 }
 
+p {
+  text-align: justify;
+  line-height: 1.5;
+
+}
+
 h1, h2, h3 {
   line-height:1.1;
+}
+
+h1, h2 {
+  text-align: center;
 }
 
 h1 {
@@ -82,6 +92,7 @@ h1 {
 h2 {
   color:#393939;
 }
+
 
 h3, h4, h5, h6 {
   color:#494949;
@@ -108,8 +119,26 @@ a:hover small {
 }
 
 .wrapper {
-  width:860px;
+  width:920px;
   margin:0 auto;
+  padding: 0;
+}
+
+div.centered {
+  text-align: center;
+}
+
+div.image {
+  display: table;
+  margin: 0 auto;
+}
+
+div.caption {
+  display: table-caption;
+  caption-side: bottom;
+  text-align: justify;
+  margin: 0 auto;
+  border-style: none none solid none;
 }
 
 blockquote {
@@ -133,7 +162,7 @@ pre {
   overflow-x: auto;
 }
 
-table {
+/*table {
   width:100%;
   border-collapse:collapse;
 }
@@ -142,7 +171,7 @@ th, td {
   text-align:left;
   padding:5px 10px;
   border-bottom:1px solid #e5e5e5;
-}
+}*/
 
 dt {
   color:#444;
@@ -155,7 +184,10 @@ th {
 
 img {
   max-width:100%;
+  display: block;
+  margin: 0 auto;
 }
+
 
 header {
   width:270px;
@@ -224,8 +256,8 @@ header ul a strong {
 }
 
 section {
-  width:500px;
-  float:right;
+  width:auto;
+  float:none;
   padding-bottom:50px;
 }
 
@@ -266,8 +298,8 @@ footer {
   }
 
   section {
-    border:1px solid #e5e5e5;
-    border-width:1px 0;
+    /*border:1px solid #e5e5e5;*/
+    /*border-width:1px 0;*/
     padding:20px 0;
     margin:0 0 20px;
   }

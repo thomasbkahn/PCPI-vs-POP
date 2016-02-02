@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Pcpi-vs-pop by thomasbkahn</title>
+    <title>US Economic Trends</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
+<!--       <header>
         <h1>Pcpi-vs-pop</h1>
         <p>Analysis of county-scale US economic data from 1970 - 2013</p>
 
@@ -26,19 +26,19 @@
           <li><a href="https://github.com/thomasbkahn/PCPI-vs-POP/tarball/master">Download <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/thomasbkahn/PCPI-vs-POP">View On <strong>GitHub</strong></a></li>
         </ul>
-      </header>
+      </header> -->
       <section>
         <h1>
-<a id="pcpi-vs-pop" class="anchor" href="#pcpi-vs-pop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PCPI-vs-POP</h1>
+        Visualizing US Economic Trends Over the Past Four Decades</h1>
 
 <p><a href="https://vimeo.com/143492324"><img src="images/minimal.gif" alt="PCPI vs POP over time"></a>
-<em>Click image for high-definition, interpolated, 30 fps version!</em></p>
-<iframe src="https://player.vimeo.com/video/143492324" width="500" height="299" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/143492324">Per Capita Personal Income vs Population (Kernel Density Estimation)</a> from <a href="https://vimeo.com/thomaskahn">Thomas Kahn</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<em>Click image for high-definition, interpolated, 30 fps version!</em>
 <h3>
 <a id="how-has-the-us-economy-changed-over-time" class="anchor" href="#how-has-the-us-economy-changed-over-time" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How has the US economy changed over time?</h3>
 
 <p>To investigate this question (and to motivate myself to learn Pandas, the data processing and analysis library for Python), I sought to visualize economic data from the massive <a href="https://research.stlouisfed.org/fred2/">Federal Reserve Economic Data (FRED)</a> database. Specifically, I compared <a href="https://en.wikipedia.org/wiki/Per_capita_income">per capita personal income (PCPI)</a> and population of all counties (or equivalents, e.g. borough or unincorporated town) in the US. These metrics were selected on the assumption that, when combined, they would demonstrate how general prosperity has changed over time for the nation as a whole, and how the distribution of these changes manifested for individual localities.</p>
+
+<p>Python code used to prepare this report can be found in this <a href="https://github.com/thomasbkahn/pcpi-vs-pop">GitHub repository</a>, which includes an <a href="http://nbviewer.jupyter.org/github/thomasbkahn/PCPI-vs-POP/blob/master/demo.ipynb">iPython notebook demonstration</a> of interactive analysis of the related data.</p>
 
 <h3>
 <a id="methodology" class="anchor" href="#methodology" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methodology</h3>
@@ -69,8 +69,8 @@
 <p><a href="https://vimeo.com/143492323"><img src="images/annotated.gif" alt="PCPI vs POP over time with annotations"></a>
 <em>Click image for high-definition, interpolated, 30 fps version!</em></p>
 
-<h5>
-<a id="overall-increase" class="anchor" href="#overall-increase" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overall Increase</h5>
+<h4>
+<a id="overall-increase" class="anchor" href="#overall-increase" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overall Increase</h4>
 
 <p>Perhaps the most obvious conclusion from this analysis is that, overall, mean income has risen substantially (nearly doubling) over time, despite the correction for inflation. However, this does not necessarily entail that the population as a whole has seen improvements in their economic situations, as PCPI is a mean value and thus can be distorted by a small proportion of people earning significantly more than their peers. Nonetheless, the fact that the mean income has nearly doubled for the nation as whole, even including the poorest counties (where the effect of income inequality might be less severe), suggests that the average American is more prosperous in current times than they were previously. Indeed, the trend in increasing mean PCPI mirrors the growth of GDP (plotted below), suggesting that increase in PCPI overall is at least partially due to real economic growth, and not just rising income inequality.</p>
 
@@ -78,15 +78,15 @@
 
 <p>In the above plot, national mean PCPI is plotted in blue, with markers denoting data points derived directly from raw FRED data and a solid line indicating cubic spline interpolated points. The gray shaded area represents the mean PCPI value plus or minus the standard deviation in PCPI at that point. The red line represents GDP, normalized to 2015 dollars using <a href="https://research.stlouisfed.org/fred2/series/GDPDEF">GDP implicit price deflator values</a>.</p>
 
-<h5>
-<a id="correlation" class="anchor" href="#correlation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Correlation</h5>
+<h4>
+<a id="correlation" class="anchor" href="#correlation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Correlation</h4>
 
 <p>Through most of the period considered, there exists some degree of correlation between population and PCPI. This makes sense, given that industries that have steady, high-paying jobs (such as law, finance, and medicine) are often localized in places of at least moderate population density. Additionally, cities often have higher cost of living than rural areas, and therefore incomes are (ideally) increased accordingly.</p>
 
 <p>However, by 2013 this general trend has mostly vanished, with Spearman's rho falling to just 0.04. This situation also occurred briefly in the early 1970's. In both cases, a prong of counties with low population juts out in PCPI. This observation may be of some concern, because it could indicate that high-paying jobs are becoming concentrated in low-population areas, where less people are able to benefit from the opportunities. On the other hand, this behavior could be a benign consequence of rapid but localized economic changes, such as the recent and ongoing oil boom in North Dakota, or simply due to an inherent higher susceptibility to fluctuations involved with having a smaller population (e.g. Sully County, SD, which has a population just over 1,400). Indeed, the pronounced fluctuations for lower-population counties are readily apparent when the data has been <a href="https://vimeo.com/143492324">interpolated over time</a>.</p>
 
-<h5>
-<a id="skewness" class="anchor" href="#skewness" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Skewness</h5>
+<h4>
+<a id="skewness" class="anchor" href="#skewness" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Skewness</h4>
 
 <p>The skewness in PCPI fluctuates over time, but in general is higher in recent times than it has been previously (see plot below). The two regions that correspond to substantial, sustained decrease in skewness (around 1975 and 2007) also roughly correspond to periods of recession. This association makes sense, since a general decrease in the strength of the US economy could logically result in curtailing of income across all demographics, but especially among those whose previous earning simply cannot be sustained in the poorer economic climate. Therefore, recession might have an equalizing effect on income disparity.</p>
 
@@ -99,8 +99,8 @@
 <p><a href="https://vimeo.com/143492350"><img src="images/standard_score.gif" alt="Standard scores of PCPI vs POP"></a>
 <em>Click image for high-definition, interpolated, 30 fps version!</em></p>
 
-<h5>
-<a id="nyc-in-detail" class="anchor" href="#nyc-in-detail" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NYC in Detail</h5>
+<h4>
+<a id="nyc-in-detail" class="anchor" href="#nyc-in-detail" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NYC in Detail</h4>
 
 <p>New York County is an interesting case for me, since it has consistently been among the highest-earning counties (and often <em>is</em> the highest-earning county) for the duration of the time analyzed, and also happens to be the city that I currently live in. PCPI data for New York County, as well as 7 surrounding counties (including the other four boroughs) and the national average as shown in the plot below. The increases in income in New York County (Manhattan) apparently does not correspond to similar growth for the other four boroughs, which mostly track with the national average. Westchester and Nassau counties, on the other hand, do seem to share in some element of New York County's growth. One possible theory to account for this result is that these counties house many people who commute to Manhattan, often for high paying jobs in areas such as finance or law. Thus, increasing incomes for those who work in Manhattan can have effects in these neighboring communities.</p>
 
@@ -115,10 +115,10 @@
 
 <p>All other raw data comes from the <a href="https://research.stlouisfed.org/fred2/">FRED database</a>. Specifically, this data was taken from the version of the database that was uploaded on October 17th, 2015. The county-wide population data within FRED is sourced from the US Bureau of the Census. The FRED PCPI data originated from the US Bureau of Economic Analysis.</p>
       </section>
-      <footer>
+<!--       <footer>
         <p>This project is maintained by <a href="https://github.com/thomasbkahn">thomasbkahn</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+      </footer> -->
     </div>
     <script src="javascripts/scale.fix.js"></script>
     
